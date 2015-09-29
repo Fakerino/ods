@@ -1,0 +1,16 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "fakerino/ods",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/niklongstone/open-data-sample",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ]
+}
