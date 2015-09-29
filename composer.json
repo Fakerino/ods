@@ -1,4 +1,17 @@
 {
+    "name": "fakerino/ods",
+    "description": "Fake file data for Fakerino",
+    "keywords": ["faker", "fake", "generator", "data", "seed", "fixtures", "test", "database"],
+    "homepage": "http://github.com/fakerino/ods",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicola Pietroluongo",
+            "email": "nik.longstone@gmail.com",
+            "homepage": "http://nicolapietroluongo.com"
+        }
+    ],
     "repositories": [
         {
             "type": "package",
@@ -12,8 +25,5 @@
                 }
             }
         }
-    ],
-    "require": {
-        "fakerino/ods": "*"
-    }
+    ]
 }
