@@ -1,5 +1,5 @@
 {
-    "name": "fakerino/ods",
+    "name": "fakerino/ods-installer",
     "description": "Fake file data for Fakerino",
     "keywords": ["faker", "fake", "generator", "data", "seed", "fixtures", "test", "database"],
     "homepage": "http://github.com/fakerino/ods",
