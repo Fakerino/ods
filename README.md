@@ -3,7 +3,7 @@ Fake file data for Fakerino
 
 ## Installation
 
-`composer require fakerino/ods:"dev-master"`
+`composer require fakerino/ods-installer:"dev-master"`
 
 
 ## Contribute
