@@ -26,7 +26,4 @@
             }
         }
     ],
-    "require": {
-        "fakerino/ods": "1.0"
-    }
 }
