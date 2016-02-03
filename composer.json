@@ -1,29 +1,16 @@
 {
-    "name": "fakerino/ods-installer",
-    "description": "Fake file data for Fakerino",
-    "keywords": ["faker", "fake", "generator", "data", "seed", "fixtures", "test", "database"],
-    "homepage": "http://github.com/fakerino/ods",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Nicola Pietroluongo",
-            "email": "nik.longstone@gmail.com",
-            "homepage": "http://nicolapietroluongo.com"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "fakerino/ods",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/niklongstone/open-data-sample",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
-    ]
+  "name": "fakerino/ods-installer",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "ODSInstaller\\": "src/ODSInstaller/"
+    }
+  },
+  "extra": {
+    "class": "ODSInstaller\\ODSInstallerPlugin"
+  },
+  "require": {
+    "composer-plugin-api": "^1.0"
+  }
 }
