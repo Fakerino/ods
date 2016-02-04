@@ -22,33 +22,15 @@ class ODSInstaller extends LibraryInstaller implements InstallerInterface
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         parent::install($repo, $package);
-        return $this->doSomeWork($repo, $package);
+        return $this->installODS($repo, $package);
     }
 
-    protected function doSomeWork(InstalledRepositoryInterface $repo, PackageInterface $package)
+    protected function installODS(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        @mkdir('data', 0000);
+        @mkdir($this->odsPath, 0000);
+
+        var_dump($this->downloadManager);
 
         return $this;
     }
-
-    protected function getMyTargetPath(PackageInterface $package, \SplFileInfo $file)
-    {
-
-        $templatePath = $this->getTemplatePath($package);
-
-        $relativeFilePath = substr($file->getPathname(), strlen($templatePath)+1);
-
-        return getcwd() . DIRECTORY_SEPARATOR . $relativeFilePath;
-    }
-
-    protected function getTemplatePath($package)
-    {
-        $path = $this->getPackageBasePAth($package)
-            . DIRECTORY_SEPARATOR
-            . $this->templatePath;
-
-        return $path;
-    }
-
 }
