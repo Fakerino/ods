@@ -10,7 +10,7 @@ class ODSInstallerPlugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new ODSInstaller($io, $composer, $downloader);
+        $installer = new ODSInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
 }
