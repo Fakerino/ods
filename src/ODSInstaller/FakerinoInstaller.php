@@ -32,12 +32,12 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
     {
         @mkdir(self::ODS_DEFAULT_PATH, 0000);
 
-        $odsRepoConfig = ['url'=> self::ODS_REPO_URL];
-        $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Config());
-        $odsPackage = new Package('ODS', 'dev-master', 'dev-master');
-        $odsIstaller = new LibraryInstaller($this->io, $this->composer);
-        $odsIstaller->install($odsRepository, $odsPackage);
-        $this->io->write('Open Data sample installed');
+        $io = new \Composer\IO\BufferIO();
+        $downloader = new \Composer\Downloader\GitDownloader($io, new \Composer\Config());
+        $odsPackager = new \Composer\Package\Package('ods', 'master', 'master');
+        $odsPackager->setSourceUrl('https://github.com/niklongstone/open-data-sample.git');
+        $odsPackager->setSourceReference('master');
+        $downloader->download($odsPackager, self::ODS_DEFAULT_PATH);
 
         return $this;
     }
