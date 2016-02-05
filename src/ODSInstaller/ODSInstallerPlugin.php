@@ -10,7 +10,7 @@ class ODSInstallerPlugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new ODSInstaller($io, $composer);
+        $installer = new FakerinoInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
 }
