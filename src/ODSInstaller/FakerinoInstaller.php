@@ -23,14 +23,13 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         parent::install($repo, $package);
-        $this->getOdsInstaller()->install();
 
         return $this->installODS($repo, $package);
     }
 
     protected function installODS(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        @mkdir($this->getOdsPath(), 0000);
+        @mkdir(self::ODS_DEFAULT_PATH, 0000);
 
         $odsRepoConfig = ['url'=>self::ODS_REPO_URL];
         $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Composer\Config(), null, 'git');
@@ -45,10 +44,5 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
     public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
     {
         parent::update($repo, $initial, $target);
-    }
-
-    private function getOdsInstaller()
-    {
-        return new ODSInstaller($this->io, $this->composer);
     }
 }
