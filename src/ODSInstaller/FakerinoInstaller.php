@@ -34,7 +34,7 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
 
         $odsRepoConfig = ['url'=> self::ODS_REPO_URL];
         $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Config());
-        $odsPackage = new BasePackage('ODS');
+        $odsPackage = new Package('ODS', 'dev-master', 'dev-master');
         $odsIstaller = new LibraryInstaller($this->io, $this->composer);
         $odsIstaller->install($odsRepository, $odsPackage);
         $this->io->write('Open Data sample installed');
