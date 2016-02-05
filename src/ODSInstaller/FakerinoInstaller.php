@@ -7,7 +7,7 @@ use Composer\Installer\InstallerInterface;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Repository\VcsRepository;
-use Composer\Package\BasePackage;
+use Composer\Package\Package;
 use Composer\Config;
 
 class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
