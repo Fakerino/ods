@@ -8,6 +8,7 @@ use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Repository\VcsRepository;
 use Composer\Package\BasePackage;
+use Composer\Config;
 
 class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
 {
@@ -32,7 +33,7 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
         @mkdir(self::ODS_DEFAULT_PATH, 0000);
 
         $odsRepoConfig = ['url'=>self::ODS_REPO_URL];
-        $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new \Composer\Config(), null, 'git');
+        $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Config(), null, 'git');
         $odsPackage = new BasePackage('ODS');
         $odsIstaller = new LibraryInstaller($this->io, $this->composer);
         $odsIstaller->install($odsRepository, $odsPackage);
