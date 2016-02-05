@@ -32,8 +32,8 @@ class FakerinoInstaller extends LibraryInstaller implements InstallerInterface
     {
         @mkdir(self::ODS_DEFAULT_PATH, 0000);
 
-        $odsRepoConfig = ['url'=>self::ODS_REPO_URL];
-        $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Config(), null, 'git');
+        $odsRepoConfig = ['url'=> self::ODS_REPO_URL];
+        $odsRepository = new VcsRepository($odsRepoConfig, $this->io, new Config());
         $odsPackage = new BasePackage('ODS');
         $odsIstaller = new LibraryInstaller($this->io, $this->composer);
         $odsIstaller->install($odsRepository, $odsPackage);
